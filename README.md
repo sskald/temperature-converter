@@ -1,4 +1,4 @@
-======================================================================================
+===========================================================================
 This program is a console converter of temperature measurement systems.
 To use it, follow these steps:
 1) Enter the temperature value to be converted.
@@ -11,4 +11,4 @@ Fahrenheit -> Kelvin
 Kelvin -> Celsius
 Kelvin -> Fahrenheit
 3) Get results
-======================================================================================
+===========================================================================
