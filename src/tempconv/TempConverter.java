@@ -5,8 +5,8 @@ public class TempConverter {
 Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		double t = getTemp();
-		char si1 = getSI();
-		char si2 = getSI();
+		String si1 = getSI();
+		String si2 = getSI();
 		double result = calc(t, si1, si2);
 		System.out.println("Перевод выполнен: " + result);
 	}
@@ -21,7 +21,32 @@ Scanner sc = new Scanner(System.in);
 			return getTemp();
 		}
 	}
-	public static char getSI() {
-		
+	public static String getSI() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Выберите способ перевода: \n1 - C*->F* \n2 - C*->K* \n3 - F*->C* \n4 - F*->K* \n5 - K*->C* \n6 - K*->F*");
+		int SINumber = 0;
+		if(sc.hasNextInt()) {
+			SINumber = sc.nextInt();
+		} else {
+			System.out.println("ОШИБКА ПРИ ВЫБОРЕ. ПОВТОРИТЕ ПОПЫТКУ");
+			return getSI();
+		}
+		switch (SINumber) {
+		case 1:
+			return "C*->F*";
+		case 2:
+			return "C*->K*";
+		case 3:
+			return "F*->C*";
+		case 4:
+			return "F*->K*";
+		case 5:
+			return "K*->C*";
+		case 6:
+			return "K*->F*";
+		default:
+			System.out.println("НЕПРАВИЛЬНЫЙ СПОСОБ ПЕРЕВОДА. ПОВТОРИТЕ ПОПЫТКУ");
+			return getSI();
+		}
 	}
 }
