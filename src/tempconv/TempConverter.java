@@ -49,4 +49,23 @@ Scanner sc = new Scanner(System.in);
 			return getSI();
 		}
 	}
+	
+	public static double CF(double t) {
+		return (t - 32)/1.8;
+	}
+	public static double CK(double t) {
+		return t - 273.15;
+	}
+	public static double FC(double t) {
+		return t * 1.8 + 32;
+	}
+	public static double FK(double t) {
+		return t * 1.8 - 459.67;
+	}
+	public static double KC(double t) {
+		return t + 273.15;
+	}
+	public static double KF(double t) {
+		return (t + 459.67)/1.8;
+	}
 }
