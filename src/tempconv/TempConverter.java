@@ -6,8 +6,7 @@ Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		double t = getTemp();
 		String si1 = getSI();
-		String si2 = getSI();
-		double result = calc(t, si1, si2);
+		double result = calc(t, si1);
 		System.out.println("Перевод выполнен: " + result);
 	}
 	
@@ -50,22 +49,48 @@ Scanner sc = new Scanner(System.in);
 		}
 	}
 	
-	public static double CF(double t) {
-		return (t - 32)/1.8;
-	}
-	public static double CK(double t) {
-		return t - 273.15;
-	}
-	public static double FC(double t) {
+	public static double CF(double t) {	
 		return t * 1.8 + 32;
 	}
-	public static double FK(double t) {
-		return t * 1.8 - 459.67;
-	}
-	public static double KC(double t) {
+	public static double CK(double t) {
 		return t + 273.15;
 	}
-	public static double KF(double t) {
+	public static double FC(double t) {
+		return (t - 32)/1.8;
+	}
+	public static double FK(double t) {
 		return (t + 459.67)/1.8;
+	}
+	public static double KC(double t) {
+		return t - 273.15;
+	}
+	public static double KF(double t) {
+		return t * 1.8 - 459.67;
+	}
+	
+	
+	public static double calc(double t, String SI) {
+		switch(SI) {
+		case "C*->F*": {
+			return CF(t);
+		}
+		case "C*->K*": {
+			return CK(t);
+		}
+		case "F*->C*": {
+			return FC(t);
+		}
+		case "F*->K*": {
+			return FK(t);
+		}
+		case "K*->C*": {
+			return KC(t);
+		}
+		case "K*->F*": {
+			return KF(t);
+		}
+		default:
+			return 0;
+		}
 	}
 }
